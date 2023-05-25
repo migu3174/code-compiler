@@ -47,7 +47,7 @@ function App() {
     }
   }, [language])
 
-  const { compileCode, data } = useCodeCompilation()
+  const { compileCode, data, isLoading } = useCodeCompilation()
 
   return (
     <Split className="split">
@@ -93,6 +93,7 @@ function App() {
         />
         <button onClick={() => compileCode({ code: srcCode || '', language })}>Run code</button>
         <button onClick={() => ({})}>Submit code</button>
+        {isLoading && <h4>Processing...</h4>}
         {data?.testCaseResults?.map((testCaseResult, index) => (
           <div key={index}>
             <h3>Output</h3>

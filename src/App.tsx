@@ -97,8 +97,9 @@ function App() {
           <div key={index}>
             <h3>Output</h3>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <p>Test case {index + 1}</p>
+              <p style={{ verticalAlign: 'center' }}>Test case {index + 1}</p>
               <div>
+                <p>{testCaseResult.passOrFail ? '✅' : '❌'}</p>
                 <p>Input: {testCaseResult.input}</p>
                 <p>Output: {testCaseResult.output}</p>
                 <p>Expected: {testCaseResult.expectedOutput}</p>
